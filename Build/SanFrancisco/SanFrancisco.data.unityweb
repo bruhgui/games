@@ -1,0 +1,8 @@
+
+var UnityModule = (function() {
+  var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
+  return (
+function(UnityModule) {
+  UnityModule = UnityModule || {};
+
+var Module=typeof UnityModule!=="undefined"?UnityModule:{};if(typeof ENVIRONMENT_IS_PTHREAD==="undefined"||!ENVIRONMENT_IS_PTHREAD){Module["preRun"].push((function(){var unityFileSystemInit=Module["unityFileSystemInit"]||(function(){if(!Module.indexedDB){console.log("IndexedDB is not available. Data will not persist in cache and PlayerPrefs will not be saved.")}FS.mkdir("/idbfs");FS.mount(IDBFS,{},"/idbfs");Module.addRunDependency("JS_FileSystem_Mount");FS.syncfs(true,(function(err){Module.removeRunDependency("JS_FileSystem_Mount")}))});unityFileSystemInit()}))}Module["SetFullscreen"]=(function(fullscreen){if(typeof runtimeInitialized==="undefined"||!runtimeInitialized){console.log("Runtime not initialized yet.")}else if(typeof JSEvents==="undefined"){console.log("Player not loaded yet.")}else{var tmp=JSEvents.canPerformEventHandlerRequests;JSEvents.canPerformEventHandlerRequests=(function(){return 1});Module.ccall("SetFullscreen",null,["number"],[fullscreen]);JSEvents.canPerformEventHandlerRequests=tmp}});Module["demangle"]=demangle||(function(symbol){return symbol});var MediaDevices=[];if(typeof ENVIRONMENT_IS_PTHREAD==="undefined"||!ENVIRONMENT_IS_PTHREAD){Module["preRun"].push((function(){var enumerateMediaDevices=(function(){var getMedia=navigator.getUserMedia||
